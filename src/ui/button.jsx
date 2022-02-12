@@ -17,7 +17,7 @@ const Button = ({
     {...props}
     className="shadow"
     className={cn(
-      "flex items-center rounded-[6px] disabled:cursor-not-allowed",
+      "flex items-center rounded-[6px] leading-[20px] disabled:cursor-not-allowed",
       "before:text-[1em] after:text-[1em]",
       {
         "bg-neutral-10 text-neutral-40 shadow-neutral-50/20 hover:bg-neutral-20 disabled:bg-neutral-10 disabled:text-neutral-30":
@@ -44,9 +44,13 @@ const Button = ({
       }
     )}
   >
-    {startIcon && <Icon className="mr-2.5 text-xl " name={startIcon} />}
+    {startIcon && (
+      <Icon className="mr-2.5 text-xl leading-[inherit]" name={startIcon} />
+    )}
     <span>{label}</span>
-    {endIcon && <Icon className="ml-2.5 text-xl" name={endIcon} />}
+    {endIcon && (
+      <Icon className="ml-2.5 text-xl leading-[inherit]" name={endIcon} />
+    )}
   </button>
 );
 
