@@ -1,0 +1,229 @@
+import { Story, Canvas, Meta, ArgsTable } from "@storybook/addon-docs";
+import "../config";
+import Button from "../ui/button";
+import { availableIcons } from "../ui/icon";
+
+<Meta
+  title="Page/Button"
+  component={Button}
+  argTypes={{
+    label: {
+      table: { category: "Props" },
+    },
+    variant: {
+      control: { type: "select" },
+      table: { category: "Props" },
+    },
+    color: {
+      control: { type: "select" },
+      table: { category: "Props" },
+    },
+    size: {
+      control: { type: "select" },
+      table: { category: "Props" },
+    },
+    disableShadow: {
+      table: { category: "State" },
+    },
+    disabled: {
+      table: { category: "State" },
+    },
+    onClick: {
+      table: { category: "Event" },
+    },
+    startIcon: {
+      options: availableIcons,
+      control: { type: "select" },
+      table: { category: "Props" },
+    },
+    endIcon: {
+      options: availableIcons,
+      control: { type: "select" },
+      table: { category: "Props" },
+    },
+  }}
+/>
+
+export const Template = (args) => <Button {...args} />;
+
+# Button
+
+<Canvas>
+  <Story
+    name="Playground"
+    parameters={{
+      layout: "centered",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Playground" />
+
+# Stories
+
+## Variants
+
+<Canvas>
+  <Story
+    name="Default button"
+    args={{
+      variant: "default",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Outline button"
+    args={{
+      variant: "outline",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Text button"
+    args={{
+      variant: "text",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Shadow control
+
+<Canvas>
+  <Story
+    name="Without shadow"
+    args={{
+      variant: "default",
+      disableShadow: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Disabled
+
+<Canvas>
+  <Story
+    name="Disabled default button"
+    args={{
+      variant: "default",
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Disabled outline button"
+    args={{
+      variant: "outline",
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Disabled text button"
+    args={{
+      variant: "text",
+      disabled: true,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Icons
+
+<Canvas>
+  <Story
+    name="With icon at the start"
+    args={{
+      startIcon: "local_grocery_store",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="With icon at the end"
+    args={{
+      endIcon: "local_grocery_store",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Sizes
+
+<Canvas>
+  <Story
+    name="Size small"
+    args={{
+      size: "sm",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Size medium (default)"
+    args={{
+      size: "md",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="Size large"
+    args={{
+      size: "lg",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+## Colors
+
+<Canvas>
+  <Story
+    name="With default color"
+    args={{
+      color: "default",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="With primary color"
+    args={{
+      color: "primary",
+      label: "Primary",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="With secondary color"
+    args={{
+      color: "secondary",
+      label: "Secondary",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="With danger color"
+    args={{
+      color: "danger",
+      label: "Danger",
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
